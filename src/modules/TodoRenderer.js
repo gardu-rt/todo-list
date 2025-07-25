@@ -3,6 +3,15 @@ export default class TodoRenderer {
     this.container = container;
     this.onToggle = onToggle;
     this.onDelete = onDelete;
+
+    this.container.addEventListener("click", e => {
+      const btn = e.target.closest("button");
+      if (!btn) return;
+
+      const index = Number(btn.dataset.index);
+      if (btn.classList.contains("toggleBtn")) this.onToggle(index);
+      if (btn.classList.contains("deleteBtn")) this.onDelete(index);
+    });
   };
 
   render(todos) {
@@ -22,14 +31,6 @@ export default class TodoRenderer {
 
       if (todo.done) li.style.textDecoration = "line-through";
       this.container.appendChild(li);
-
-      this.container.querySelectorAll(".toggleBtn").forEach(btn =>
-        btn.addEventListener("click", () => this.onToggle(btn.dataset.index))
-      );
-
-      this.container.querySelectorAll(".deleteBtn").forEach(btn =>
-        btn.addEventListener("click", () => this.onDelete(btn.dataset.index))
-      );
     });
   }
 }
