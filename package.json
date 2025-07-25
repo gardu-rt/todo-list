@@ -4,7 +4,7 @@
   "description": "A simple yet scalable Todo List application built with vanilla HTML, CSS, and JavaScript.   Designed to be expanded into a full-featured productivity tool.",
   "private": true,
   "scripts": {
-    "start": "webpack --open --config webpack.dev.js",
+    "start": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
   "repository": {

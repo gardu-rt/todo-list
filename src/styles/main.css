@@ -20,8 +20,20 @@ form {
   margin-bottom: 1rem;
 }
 
+input, select, button {
+  font-size: 14px;
+}
+
+input, select {
+  padding: 3px;
+}
+
 input[type="text"] {
   flex: 1;
+}
+
+input:focus, select:focus {
+  outline: none;
 }
 
 ul {
