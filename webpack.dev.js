@@ -6,5 +6,13 @@ module.exports = merge(common, {
   devtool: "eval-source-map",
   devServer: {
     static: "./dist",
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"]
+      }
+    ]
   }
 });
