@@ -9,6 +9,7 @@ export default class TodoRenderer {
     this.container.innerHTML = "";
     todos.forEach((todo, index) => {
       const li = document.createElement("li");
+      li.classList.add(todo.priority);
       li.innerHTML = `
         <span>
           <strong>${todo.title}</strong> (Due: ${todo.dueDate})
